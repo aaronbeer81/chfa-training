@@ -1,0 +1,10 @@
+Aufgabe CHFA 24.01:
+	1. Organisation mit dem Namen "OrdererOrg" und der ID "OrdererMSP" fertig definieren. Alle drei Orderer sollen teil dieser Organisation sein.
+	2. RAFT-Konfiguration für alle Orderer vervollständigen. Verwenden Sie dazu jeweils die folgenden Client- und ServerTLSCerts:
+		- crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
+		- crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
+		- crypto-config/ordererOrganizations/example.com/orderers/orderer3.example.com/tls/server.crt
+
+	Tipp:
+	Das Netzwerk kann mit dem folgenden Befehl (neu-)gestartet werden:
+		- ./teardown.sh && ./generate.sh && ./start.sh
