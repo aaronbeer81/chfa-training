@@ -1,2 +1,2 @@
-#Aufgabe CHFA 24.01.2022 (Noah Schär)
+# Aufgabe CHFA 24.01.2022 (Noah Schär)
 Ein neuer Peer mit dem Namen "peer1.org1.example.com" soll definiert werden. Anschliessend soll das Crypto Material für den neuen Peer generiert werden, ohne dass das bereits vorhandene überschrieben wird. Zum Schluss soll der Genesis Block neu generiert werden, sodass der neue Peer in einem weiteren Schritt nur noch gestartet und zum Channel hinzugefügt werden könnte.
