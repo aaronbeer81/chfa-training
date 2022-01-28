@@ -1,4 +1,4 @@
-##Aufgabe CHFA 31.01.2022
+##      Aufgabe CHFA 31.01.2022
 1. Erstelle ein neues Channel Profil mit dem Namen "TaskChannel" die "Org1" sollte mitglied sein.
 2. Generiere einen neuen Channel mit dem Namen "channel1" mithilfe des vorher konfigurierten Profils.
 3. Trete mit dem "peer0.org1.example.com" dem erstellten "channel1" bei.
