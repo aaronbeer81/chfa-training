@@ -1,4 +1,4 @@
-##Lösung
+##  Lösung
 
 - Im configtx.yaml sollte ein neues Profil erstellt werden (ende des Dokuments)
 - Channel mit dem Profil generieren
