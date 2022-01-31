@@ -1,0 +1,39 @@
+- Alle Peer & Orderer Container stoppen:
+
+  docker stop orderer.example.com orderer2.example.com orderer3.example.com peer0.org1.example.com peer1.org1.example.com peer0.org2.example.com peer1.org2.example.com
+
+- Backup machen von Ledgers & MSPs:
+
+  mkdir -p ./backup/orderer/orderer1/msp/ ./backup/orderer/orderer1/ledger/ ./backup/orderer/orderer2/msp/ ./backup/orderer/orderer2/ledger/ ./backup/orderer/orderer3/msp/ ./backup/orderer/orderer3/ledger/ ./backup/peer/org1/peer0/msp/ ./backup/peer/org1/peer0/ledger/ ./backup/peer/org1/peer1/msp/ ./backup/peer/org1/peer1/ledger/ ./backup/peer/org2/peer0/msp/ ./backup/peer/org2/peer0/ledger/ ./backup/peer/org2/peer1/msp/ ./backup/peer/org2/peer1/ledger/
+
+  # LEDGER BACKUP
+  docker cp orderer.example.com:/var/hyperledger/production/orderer/ ./backup/orderer/orderer1/ledger/
+  docker cp orderer2.example.com:/var/hyperledger/production/orderer/ ./backup/orderer/orderer2/ledger/
+  docker cp orderer3.example.com:/var/hyperledger/production/orderer/ ./backup/orderer/orderer3/ledger/
+  docker cp peer0.org1.example.com:/var/hyperledger/production/ ./backup/peer/org1/peer0/ledger/
+  docker cp peer1.org1.example.com:/var/hyperledger/production/ ./backup/peer/org1/peer1/ledger/
+  docker cp peer0.org2.example.com:/var/hyperledger/production/ ./backup/peer/org2/peer0/ledger/
+  docker cp peer1.org2.example.com:/var/hyperledger/production/ ./backup/peer/org2/peer1/ledger/
+
+  # MSP BACKUP
+  docker cp orderer.example.com:/var/hyperledger/orderer/ ./backup/orderer/orderer1/msp/
+  docker cp orderer2.example.com:/var/hyperledger/orderer/ ./backup/orderer/orderer2/msp/
+  docker cp orderer3.example.com:/var/hyperledger/orderer/ ./backup/orderer/orderer3/msp/
+  docker cp peer0.org1.example.com:/etc/hyperledger/fabric/ ./backup/peer/org1/peer0/msp/
+  docker cp peer1.org1.example.com:/etc/hyperledger/fabric/ ./backup/peer/org1/peer1/msp/
+  docker cp peer0.org2.example.com:/etc/hyperledger/fabric/ ./backup/peer/org2/peer0/msp/
+  docker cp peer1.org2.example.com:/etc/hyperledger/fabric/ ./backup/peer/org2/peer1/msp/
+
+- Containers & Images von Chaincode removen:
+
+  # Nicht nötig da noch keine existieren.
+
+- Alle Peer & Orderer Container removen:
+
+  docker rm orderer.example.com orderer2.example.com orderer3.example.com peer0.org1.example.com peer1.org1.example.com peer0.org2.example.com peer1.org2.example.com
+
+- Image-Version und Verzeichnisse in docker-compose.yml anpassen. Dann Peer & Orderer Container starten:
+
+  docker-compose -f docker-compose.yml up -d orderer.example.com orderer2.example.com orderer3.example.com peer0.org1.example.com peer1.org1.example.com peer0.org2.example.com peer1.org2.example.com
+  oder auch
+  docker-compose up -d
