@@ -1,5 +1,6 @@
 # Peer0
-Fehlermeldung ....
+Fehlermeldung:
+WARN 001 Failed loading ClientOU certificate at [/etc/hyperledger/fabric/msp/cacerts/ca.org1.example.com-cert.pem]: [could not read file /etc/hyperledger/fabric/msp/cacerts/ca.org1.example.com-cert.pem: open /etc/hyperledger/fabric/msp/cacerts/ca.org1.example.com-cert.pem: no such file or directory]
 
 Dem Peer fehlt das ca Zerti in
 ./crypto-config\peerOrganizations\org1.example.com\peers\peer1.org1.example.com\msp\cacerts
@@ -9,6 +10,7 @@ Natürlich kannst du es aber auch vom Peer1 kopieren, da es ja immer dasselbe is
 
 
 # Peer1
-Fehlermeldung ....
+Fehlermeldung:
+WARN 024 access denied: channel the supplied identity is not valid: x509: certificate signed by unknown authority channel= txID=9e638263
 
-Im fehlerhaften , Zeile 236 wurde das Verzeichnis, welches das CA-Zerti beinhaltet nicht gemountet.
+Im fehlerhaften docker-compose.yml, Zeile 236, wurde das Verzeichnis welches das CA-Zerti beinhaltet nicht gemountet.
