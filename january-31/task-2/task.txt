@@ -1,0 +1,3 @@
+Aufgabe CHFA 31.01:
+	- Starte das existierende Netzwerk im Ordner "task-resources" mit dem Befehl: ./generate.sh && ./start.sh
+	- Migriere nun die Images aller Peers und Orderer auf die Version 2.3 nach den Best-Practices von Hyperledger Fabric.
