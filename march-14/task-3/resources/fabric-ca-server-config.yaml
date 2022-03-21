@@ -40,7 +40,7 @@
 version: 1.4.9
 
 # Server's listening port (default: 7054)
-port: 7054
+port: 7055
 
 # Cross-Origin Resource Sharing (CORS)
 cors:
@@ -153,7 +153,7 @@ registry:
 #  or "mysql".
 #############################################################################
 db:
-  type: sqlite
+  type: sqlite3
   datasource: fabric-ca-server.db
   tls:
       enabled: false

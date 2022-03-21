@@ -4,7 +4,7 @@ networks:
   basic:
 
 services:
-  couchdbService:
+  couchdbOrg1Peer0:
     container_name: couchdbOrg1Peer0
     image: hyperledger/fabric-couchdb
     environment:
@@ -12,6 +12,17 @@ services:
       - COUCHDB_PASSWORD=password
     ports:
       - 7777:5984
+    networks:
+      - basic
+
+  couchdbOrg1Peer1:
+    container_name: couchdbOrg1Peer1
+    image: hyperledger/fabric-couchdb
+    environment:
+      - COUCHDB_USER=peer1.Org1
+      - COUCHDB_PASSWORD=password
+    ports:
+      - 8888:5984
     networks:
       - basic
 
@@ -25,7 +36,7 @@ services:
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/priv_sk
     ports:
       - "7054:7054"
-    command: sh -c 'fabric-ca-client start -b admin:adminpw'
+    command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
       - ./crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.org1.example.com
@@ -189,6 +200,7 @@ services:
       - orderer.example.com
       - orderer2.example.com
       - orderer3.example.com
+      - couchdbOrg1Peer1
     networks:
       - basic
 
